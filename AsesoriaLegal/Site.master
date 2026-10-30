@@ -1,0 +1,52 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AsesoriaLegal.Site" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%: Page.Title %></title>
+    <link rel="stylesheet" type="text/css" href="<%: ResolveUrl("~/Content/site.css") %>" />
+</head>
+<body>
+    <form id="formPrincipal" runat="server">
+        <header class="navbar">
+            <div class="navbar-inner contenedor">
+                <a class="navbar-brand" href="<%: ResolveUrl("~/Default.aspx") %>">
+                    <img class="brand-logo" src="<%: ResolveUrl("~/img/logo-justicia.png") %>" alt="Logo de Asesoría Legal Global" />
+                    <span class="brand-texto">Asesoría Legal <span class="brand-oro">Global</span></span>
+                </a>
+                <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+                <label for="nav-toggle" class="nav-toggle" aria-label="Abrir o cerrar el menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <nav class="navbar-menu" aria-label="Navegación principal">
+                    <asp:HyperLink ID="lnkInicio" runat="server" NavigateUrl="~/Default.aspx" CssClass="nav-link">Inicio</asp:HyperLink>
+                    <asp:HyperLink ID="lnkRegistro" runat="server" NavigateUrl="~/Registro.aspx" CssClass="nav-link">Registrarse</asp:HyperLink>
+                    <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Login.aspx" CssClass="nav-link">Iniciar Sesión</asp:HyperLink>
+                    <asp:HyperLink ID="lnkDocumentos" runat="server" NavigateUrl="~/Documentos.aspx" CssClass="nav-link">Mis Documentos</asp:HyperLink>
+                    <asp:Label ID="lblBienvenido" runat="server" CssClass="nav-sesion" Visible="false"></asp:Label>
+                    <asp:LinkButton ID="lnkSalir" runat="server" OnClick="lnkSalir_Click" CssClass="nav-link" Visible="false">Cerrar sesión</asp:LinkButton>
+                </nav>
+            </div>
+        </header>
+
+        <main class="contenido contenedor">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner contenedor">
+                <img class="footer-logo" src="<%: ResolveUrl("~/img/logo-asesoria.png") %>" alt="Logo de Asesoría Legal" />
+                <div class="footer-texto">
+                    <p class="footer-titulo">Asesoría Legal Global</p>
+                    <p>Asesoramiento jurídico confiable para personas y empresas.</p>
+                    <p class="footer-copy">&copy; <%: DateTime.Now.Year %> Asesoría Legal Global - Parcial 2 TP4 - Laboratorio de Programación 3</p>
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

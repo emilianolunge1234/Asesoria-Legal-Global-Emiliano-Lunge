@@ -1,0 +1,19 @@
+# Visual Studio / MSBuild
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.csproj.user
+
+# NuGet (this solution uses no packages; the leftover restore folder stays local)
+packages/
+
+# Academic scaffolding notes (not part of the site delivery)
+odd/
+
+# Uploaded documents are runtime user data and must never be committed.
+# The folders themselves are created on demand by the application.
+AsesoriaLegal/App_Data/Documentos/
