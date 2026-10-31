@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AsesoriaLegal.Default" MasterPageFile="~/Site.master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AsesoriaLegal.Default" MasterPageFile="~/Site.master" %>
 
 <asp:Content ID="cphPrincipal" ContentPlaceHolderID="MainContent" runat="server">
     <section class="hero">
@@ -7,8 +7,7 @@
             <h1>Asesoría Legal Global</h1>
             <p class="hero-subtitulo">Protegemos sus derechos con experiencia, transparencia y compromiso. Asesoramiento jurídico para personas y empresas, de principio a fin.</p>
             <div class="hero-acciones">
-                <asp:HyperLink ID="lnkCtaRegistro" runat="server" NavigateUrl="~/Registro.aspx" CssClass="btn btn-primario">Crear mi cuenta</asp:HyperLink>
-                <asp:HyperLink ID="lnkCtaLogin" runat="server" NavigateUrl="~/Login.aspx" CssClass="btn btn-secundario">Ya tengo cuenta</asp:HyperLink>
+                <asp:HyperLink ID="lnkMisDocumentos" runat="server" NavigateUrl="~/Documentos.aspx" CssClass="btn btn-primario">Mis Documentos</asp:HyperLink>
             </div>
         </div>
     </section>

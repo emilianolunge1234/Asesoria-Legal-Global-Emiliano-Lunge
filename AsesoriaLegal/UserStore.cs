@@ -53,19 +53,19 @@ namespace AsesoriaLegal
 
             if (claveUsuario.Length == 0 || claveEmail.Length == 0)
             {
-                error = "Los datos del usuario estÃ¡n incompletos.";
+                error = "Los datos del usuario están incompletos.";
                 return false;
             }
 
             if (UsernameExists(claveUsuario))
             {
-                error = "El nombre de usuario ya estÃ¡ en uso. Elija otro.";
+                error = "El nombre de usuario ya está en uso. Elija otro.";
                 return false;
             }
 
             if (EmailExists(claveEmail))
             {
-                error = "El correo electrÃ³nico ya estÃ¡ registrado.";
+                error = "El correo electrónico ya está registrado.";
                 return false;
             }
 
@@ -81,7 +81,7 @@ namespace AsesoriaLegal
 
             if (!Users.TryAdd(claveUsuario, nuevo))
             {
-                error = "El nombre de usuario ya estÃ¡ en uso. Elija otro.";
+                error = "El nombre de usuario ya está en uso. Elija otro.";
                 return false;
             }
 

@@ -26,7 +26,7 @@ namespace AsesoriaLegal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.Title = "Registrarse | AsesorÃ­a Legal Global";
+            Page.Title = "Registrarse | Asesoría Legal Global";
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
@@ -39,13 +39,13 @@ namespace AsesoriaLegal
             int edad;
             if (!int.TryParse(txtEdad.Text.Trim(), out edad) || edad < 16 || edad > 120)
             {
-                MostrarErrorLocal("Debe tener entre 16 y 120 aÃ±os para registrarse.");
+                MostrarErrorLocal("Debe tener entre 16 y 120 años para registrarse.");
                 return;
             }
 
             if (clave != txtConfirmar.Text)
             {
-                MostrarErrorLocal("Las contraseÃ±as no coinciden.");
+                MostrarErrorLocal("Las contraseñas no coinciden.");
                 return;
             }
 
@@ -66,8 +66,8 @@ namespace AsesoriaLegal
             Response.Cookies.Add(cookieClave);
 
             lblExito.Text = Server.HtmlEncode(
-                "Â¡Registro exitoso! Bienvenido/a, " + nuevo.FullName +
-                ". SerÃ¡ redirigido/a a la pÃ¡gina de inicio de sesiÃ³n en unos segundos.");
+                "¡Registro exitoso! Bienvenido/a, " + nuevo.FullName +
+                ". Será redirigido/a a la página de inicio de sesión en unos segundos.");
             pnlExito.Visible = true;
 
             ClientScript.RegisterStartupScript(

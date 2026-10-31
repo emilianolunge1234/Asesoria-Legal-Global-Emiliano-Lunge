@@ -21,11 +21,11 @@ namespace AsesoriaLegal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.Title = "Iniciar SesiÃ³n | AsesorÃ­a Legal Global";
+            Page.Title = "Iniciar Sesión | Asesoría Legal Global";
 
             if (Session["Usuario"] != null)
             {
-                Response.Redirect(Page.ResolveUrl("~/Documentos.aspx"), false);
+                Response.Redirect(Page.ResolveUrl("~/Default.aspx"), false);
                 Context.ApplicationInstance.CompleteRequest();
                 return;
             }
@@ -49,7 +49,7 @@ namespace AsesoriaLegal
             AppUser encontrado = UserStore.Authenticate(usuario, clave);
             if (encontrado == null)
             {
-                lblError.Text = "Usuario o contraseÃ±a incorrectos. Verifique sus datos o regÃ­strese.";
+                lblError.Text = "Usuario o contraseña incorrectos. Verifique sus datos o regístrese.";
                 lblError.Visible = true;
                 return;
             }
@@ -71,7 +71,7 @@ namespace AsesoriaLegal
                 Response.Cookies.Add(vieja);
             }
 
-            Response.Redirect(Page.ResolveUrl("~/Documentos.aspx"));
+            Response.Redirect(Page.ResolveUrl("~/Default.aspx"));
         }
     }
 }

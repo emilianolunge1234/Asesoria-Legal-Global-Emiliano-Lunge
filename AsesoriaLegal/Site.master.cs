@@ -8,6 +8,10 @@ namespace AsesoriaLegal
     public partial class Site : MasterPage
     {
         protected ContentPlaceHolder MainContent;
+        protected HyperLink lnkInicio;
+        protected HyperLink lnkRegistro;
+        protected HyperLink lnkLogin;
+        protected HyperLink lnkDocumentos;
         protected Label lblBienvenido;
         protected LinkButton lnkSalir;
 
@@ -16,8 +20,13 @@ namespace AsesoriaLegal
             string usuario = Session["Usuario"] as string;
             bool logueado = !string.IsNullOrEmpty(usuario);
 
+            lnkInicio.Visible = logueado;
+            lnkDocumentos.Visible = logueado;
             lblBienvenido.Visible = logueado;
             lnkSalir.Visible = logueado;
+
+            lnkRegistro.Visible = !logueado;
+            lnkLogin.Visible = !logueado;
 
             if (logueado)
             {
@@ -33,7 +42,7 @@ namespace AsesoriaLegal
             ExpireCookie("ALG_Usuario");
             ExpireCookie("ALG_Clave");
 
-            Response.Redirect(Page.ResolveUrl("~/Default.aspx"));
+            Response.Redirect(Page.ResolveUrl("~/Login.aspx"));
         }
 
         private void ExpireCookie(string nombre)

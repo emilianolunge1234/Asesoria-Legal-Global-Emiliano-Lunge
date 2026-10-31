@@ -63,7 +63,7 @@ namespace AsesoriaLegal
 
             if (fuDocumento.PostedFile.ContentLength > TamanoMaximoBytes)
             {
-                MostrarMensaje("El archivo supera el tamaÃ±o mÃ¡ximo permitido de 5 MB.", false);
+                MostrarMensaje("El archivo supera el tamaño máximo permitido de 5 MB.", false);
                 return;
             }
 
@@ -72,7 +72,7 @@ namespace AsesoriaLegal
             string extension = Path.GetExtension(nombreCliente);
             if (string.IsNullOrEmpty(extension))
             {
-                MostrarMensaje("El archivo no tiene extensiÃ³n y no puede subirse.", false);
+                MostrarMensaje("El archivo no tiene extensión y no puede subirse.", false);
                 return;
             }
 
@@ -89,7 +89,7 @@ namespace AsesoriaLegal
                 string parte = "." + partes[i].Trim().ToLowerInvariant();
                 if (Array.IndexOf(ExtensionesPeligrosas, parte) >= 0)
                 {
-                    MostrarMensaje("El nombre del archivo contiene una extensiÃ³n no permitida.", false);
+                    MostrarMensaje("El nombre del archivo contiene una extensión no permitida.", false);
                     return;
                 }
             }
@@ -217,7 +217,7 @@ namespace AsesoriaLegal
 
             if (string.IsNullOrEmpty(nombreArchivo) || nombreArchivo.Trim().Length == 0)
             {
-                error = "Nombre de archivo no vÃ¡lido.";
+                error = "Nombre de archivo no válido.";
                 return false;
             }
 
@@ -228,7 +228,7 @@ namespace AsesoriaLegal
 
             if (inseguro)
             {
-                error = "Nombre de archivo no vÃ¡lido.";
+                error = "Nombre de archivo no válido.";
                 return false;
             }
 
@@ -238,7 +238,7 @@ namespace AsesoriaLegal
 
             if (!completa.StartsWith(prefijo, StringComparison.OrdinalIgnoreCase))
             {
-                error = "Ruta de archivo no vÃ¡lida.";
+                error = "Ruta de archivo no válida.";
                 return false;
             }
 

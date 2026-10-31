@@ -6,7 +6,15 @@ namespace AsesoriaLegal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.Title = "Inicio | AsesorÃ­a Legal Global";
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect(Page.ResolveUrl("~/Login.aspx"), false);
+                Context.ApplicationInstance.CompleteRequest();
+                Response.SuppressContent = true;
+                return;
+            }
+
+            Page.Title = "Inicio | Asesoría Legal Global";
         }
     }
 }
