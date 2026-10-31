@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Asesoría Legal Global - classic ASP.NET Web Forms project (.NET Framework 4.8).
-  No NuGet packages: only framework assemblies, so the project builds offline.
-  Control fields are declared in the code-behind partial classes (no separate designer files).
--->
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -53,7 +48,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <!-- Web Forms pages and assets -->
     <Content Include="Default.aspx" />
     <Content Include="Documentos.aspx" />
     <Content Include="Login.aspx" />
@@ -67,8 +61,6 @@
     <Content Include="img\logo-justicia.png" />
   </ItemGroup>
   <ItemGroup>
-    <!-- Code-behind and App_Code classes -->
-    <Compile Include="App_Code\UserStore.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
@@ -87,9 +79,9 @@
     <Compile Include="Site.master.cs">
       <DependentUpon>Site.master</DependentUpon>
     </Compile>
+    <Compile Include="UserStore.cs" />
   </ItemGroup>
   <ItemGroup>
-    <!-- Per-user upload folders are created on demand at runtime (git-ignored). -->
     <Folder Include="App_Data\Documentos" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
